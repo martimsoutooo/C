@@ -1,4 +1,4 @@
-// Generated from /home/martimsantos/Universidade/C/Bloco2/b2_03/Calculator.g4 by ANTLR 4.13.1
+// Generated from Calculator.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -29,7 +29,7 @@ public class CalculatorParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'*'", "'/ '", "'%'", "'+'", "'-'", "'('", "') '"
+			null, "'-'", "'*'", "'/'", "'%'", "'+'", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -103,6 +103,19 @@ public class CalculatorParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterProgram(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitProgram(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -115,7 +128,7 @@ public class CalculatorParser extends Parser {
 			setState(9);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 832L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 834L) != 0)) {
 				{
 				{
 				setState(6);
@@ -151,6 +164,19 @@ public class CalculatorParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitStat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitStat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final StatContext stat() throws RecognitionException {
@@ -163,7 +189,7 @@ public class CalculatorParser extends Parser {
 			setState(15);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__5 || _la==Integer) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 322L) != 0)) {
 				{
 				setState(14);
 				expr(0);
@@ -207,6 +233,19 @@ public class CalculatorParser extends Parser {
 			return getRuleContext(ExprContext.class,i);
 		}
 		public ExprAddSubContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterExprAddSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitExprAddSub(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitExprAddSub(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprParentContext extends ExprContext {
@@ -214,11 +253,57 @@ public class CalculatorParser extends Parser {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public ExprParentContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterExprParent(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitExprParent(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitExprParent(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class ExprNegContext extends ExprContext {
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public ExprNegContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterExprNeg(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitExprNeg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitExprNeg(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprIntegerContext extends ExprContext {
 		public TerminalNode Integer() { return getToken(CalculatorParser.Integer, 0); }
 		public ExprIntegerContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterExprInteger(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitExprInteger(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitExprInteger(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprMultDivModContext extends ExprContext {
@@ -230,6 +315,19 @@ public class CalculatorParser extends Parser {
 			return getRuleContext(ExprContext.class,i);
 		}
 		public ExprMultDivModContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).enterExprMultDivMod(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculatorListener ) ((CalculatorListener)listener).exitExprMultDivMod(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculatorVisitor ) return ((CalculatorVisitor<? extends T>)visitor).visitExprMultDivMod(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -248,16 +346,27 @@ public class CalculatorParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(25);
+			setState(27);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
+			case T__0:
+				{
+				_localctx = new ExprNegContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
+				setState(20);
+				match(T__0);
+				setState(21);
+				expr(5);
+				}
+				break;
 			case Integer:
 				{
 				_localctx = new ExprIntegerContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-
-				setState(20);
+				setState(22);
 				match(Integer);
 				}
 				break;
@@ -266,11 +375,11 @@ public class CalculatorParser extends Parser {
 				_localctx = new ExprParentContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(21);
-				match(T__5);
-				setState(22);
-				expr(0);
 				setState(23);
+				match(T__5);
+				setState(24);
+				expr(0);
+				setState(25);
 				match(T__6);
 				}
 				break;
@@ -278,7 +387,7 @@ public class CalculatorParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(35);
+			setState(37);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -286,19 +395,19 @@ public class CalculatorParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(33);
+					setState(35);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExprMultDivModContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(27);
+						setState(29);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(28);
+						setState(30);
 						((ExprMultDivModContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 14L) != 0)) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 28L) != 0)) ) {
 							((ExprMultDivModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -306,7 +415,7 @@ public class CalculatorParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(29);
+						setState(31);
 						expr(5);
 						}
 						break;
@@ -314,12 +423,12 @@ public class CalculatorParser extends Parser {
 						{
 						_localctx = new ExprAddSubContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(30);
+						setState(32);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(31);
+						setState(33);
 						((ExprAddSubContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==T__3 || _la==T__4) ) {
+						if ( !(_la==T__0 || _la==T__4) ) {
 							((ExprAddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -327,14 +436,14 @@ public class CalculatorParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(32);
+						setState(34);
 						expr(4);
 						}
 						break;
 					}
 					} 
 				}
-				setState(37);
+				setState(39);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
@@ -369,33 +478,35 @@ public class CalculatorParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u000b\'\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u000b)\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0001\u0000\u0005\u0000\b\b\u0000\n\u0000\f\u0000\u000b"+
 		"\t\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0003\u0001\u0010\b\u0001"+
 		"\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0003\u0002\u001a\b\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0005\u0002\"\b\u0002"+
-		"\n\u0002\f\u0002%\t\u0002\u0001\u0002\u0000\u0001\u0004\u0003\u0000\u0002"+
-		"\u0004\u0000\u0002\u0001\u0000\u0001\u0003\u0001\u0000\u0004\u0005(\u0000"+
-		"\t\u0001\u0000\u0000\u0000\u0002\u000f\u0001\u0000\u0000\u0000\u0004\u0019"+
-		"\u0001\u0000\u0000\u0000\u0006\b\u0003\u0002\u0001\u0000\u0007\u0006\u0001"+
-		"\u0000\u0000\u0000\b\u000b\u0001\u0000\u0000\u0000\t\u0007\u0001\u0000"+
-		"\u0000\u0000\t\n\u0001\u0000\u0000\u0000\n\f\u0001\u0000\u0000\u0000\u000b"+
-		"\t\u0001\u0000\u0000\u0000\f\r\u0005\u0000\u0000\u0001\r\u0001\u0001\u0000"+
-		"\u0000\u0000\u000e\u0010\u0003\u0004\u0002\u0000\u000f\u000e\u0001\u0000"+
-		"\u0000\u0000\u000f\u0010\u0001\u0000\u0000\u0000\u0010\u0011\u0001\u0000"+
-		"\u0000\u0000\u0011\u0012\u0005\t\u0000\u0000\u0012\u0003\u0001\u0000\u0000"+
-		"\u0000\u0013\u0014\u0006\u0002\uffff\uffff\u0000\u0014\u001a\u0005\b\u0000"+
-		"\u0000\u0015\u0016\u0005\u0006\u0000\u0000\u0016\u0017\u0003\u0004\u0002"+
-		"\u0000\u0017\u0018\u0005\u0007\u0000\u0000\u0018\u001a\u0001\u0000\u0000"+
-		"\u0000\u0019\u0013\u0001\u0000\u0000\u0000\u0019\u0015\u0001\u0000\u0000"+
-		"\u0000\u001a#\u0001\u0000\u0000\u0000\u001b\u001c\n\u0004\u0000\u0000"+
-		"\u001c\u001d\u0007\u0000\u0000\u0000\u001d\"\u0003\u0004\u0002\u0005\u001e"+
-		"\u001f\n\u0003\u0000\u0000\u001f \u0007\u0001\u0000\u0000 \"\u0003\u0004"+
-		"\u0002\u0004!\u001b\u0001\u0000\u0000\u0000!\u001e\u0001\u0000\u0000\u0000"+
-		"\"%\u0001\u0000\u0000\u0000#!\u0001\u0000\u0000\u0000#$\u0001\u0000\u0000"+
-		"\u0000$\u0005\u0001\u0000\u0000\u0000%#\u0001\u0000\u0000\u0000\u0005"+
-		"\t\u000f\u0019!#";
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0002\u001c\b\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0005\u0002$\b\u0002\n\u0002\f\u0002\'\t\u0002\u0001\u0002\u0000\u0001"+
+		"\u0004\u0003\u0000\u0002\u0004\u0000\u0002\u0001\u0000\u0002\u0004\u0002"+
+		"\u0000\u0001\u0001\u0005\u0005+\u0000\t\u0001\u0000\u0000\u0000\u0002"+
+		"\u000f\u0001\u0000\u0000\u0000\u0004\u001b\u0001\u0000\u0000\u0000\u0006"+
+		"\b\u0003\u0002\u0001\u0000\u0007\u0006\u0001\u0000\u0000\u0000\b\u000b"+
+		"\u0001\u0000\u0000\u0000\t\u0007\u0001\u0000\u0000\u0000\t\n\u0001\u0000"+
+		"\u0000\u0000\n\f\u0001\u0000\u0000\u0000\u000b\t\u0001\u0000\u0000\u0000"+
+		"\f\r\u0005\u0000\u0000\u0001\r\u0001\u0001\u0000\u0000\u0000\u000e\u0010"+
+		"\u0003\u0004\u0002\u0000\u000f\u000e\u0001\u0000\u0000\u0000\u000f\u0010"+
+		"\u0001\u0000\u0000\u0000\u0010\u0011\u0001\u0000\u0000\u0000\u0011\u0012"+
+		"\u0005\t\u0000\u0000\u0012\u0003\u0001\u0000\u0000\u0000\u0013\u0014\u0006"+
+		"\u0002\uffff\uffff\u0000\u0014\u0015\u0005\u0001\u0000\u0000\u0015\u001c"+
+		"\u0003\u0004\u0002\u0005\u0016\u001c\u0005\b\u0000\u0000\u0017\u0018\u0005"+
+		"\u0006\u0000\u0000\u0018\u0019\u0003\u0004\u0002\u0000\u0019\u001a\u0005"+
+		"\u0007\u0000\u0000\u001a\u001c\u0001\u0000\u0000\u0000\u001b\u0013\u0001"+
+		"\u0000\u0000\u0000\u001b\u0016\u0001\u0000\u0000\u0000\u001b\u0017\u0001"+
+		"\u0000\u0000\u0000\u001c%\u0001\u0000\u0000\u0000\u001d\u001e\n\u0004"+
+		"\u0000\u0000\u001e\u001f\u0007\u0000\u0000\u0000\u001f$\u0003\u0004\u0002"+
+		"\u0005 !\n\u0003\u0000\u0000!\"\u0007\u0001\u0000\u0000\"$\u0003\u0004"+
+		"\u0002\u0004#\u001d\u0001\u0000\u0000\u0000# \u0001\u0000\u0000\u0000"+
+		"$\'\u0001\u0000\u0000\u0000%#\u0001\u0000\u0000\u0000%&\u0001\u0000\u0000"+
+		"\u0000&\u0005\u0001\u0000\u0000\u0000\'%\u0001\u0000\u0000\u0000\u0005"+
+		"\t\u000f\u001b#%";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
